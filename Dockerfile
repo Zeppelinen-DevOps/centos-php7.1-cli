@@ -25,7 +25,9 @@ RUN yum -y --setopt=tsflags=nodocs update && \
         php71u-soap \
         php71u-tidy \
         php71u-xml \
-        php71u-xmlrpc && \
+        php71u-xmlrpc \
+        python2-pip && \
+        pip install supervisor && \
         yum clean all
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
